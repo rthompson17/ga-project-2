@@ -6,7 +6,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const session = require('express-session');
 const passport = require('passport');
-// const methodOverride = require('method-override');
+const methodOverride = require('method-override');
 
 // console.log(process.env.GOOGLE_CLIENT_ID);
 // console.log(process.env.GOOGLE_SECRET);
@@ -17,9 +17,9 @@ const passport = require('passport');
 require('./config/database');
 require('./config/passport');
 const indexRouter = require('./routes/index');
-// const matchesRouter = require('./routes/matches');
-// const reviewsRouter = require('./routes/reviews');
-// const messagesRouter = require('./routes/messages');
+const matchesRouter = require('./routes/matches');
+const reviewsRouter = require('./routes/reviews');
+const messagesRouter = require('./routes/messages');
 
 const app = express();
 
@@ -41,7 +41,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(logger('dev'));
-// app.use(methodOverride('_method'));
+app.use(methodOverride('_method'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
@@ -58,9 +58,9 @@ app.use(function (req, res, next) {
 
 // mount all routes with appropriate base paths
 
-// app.use('/matches', matchesRouter);
-// app.use('/', reviewsRouter);
-// app.use('/', messagesRouter);
+app.use('/matches', matchesRouter);
+app.use('/', reviewsRouter);
+app.use('/', messagesRouter);
 app.use('/', indexRouter);
 
 

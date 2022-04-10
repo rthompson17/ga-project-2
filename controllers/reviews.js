@@ -1,14 +1,14 @@
-// const Match = require('../models/match')
+const Match = require('../models/match')
 
-// // module.exports = {
-// //     create,
-// //     delete: deleteReview
-// // }
+module.exports = {
+    create,
+    delete: deleteReview
+}
 
-// // function create() {
+function create() {
 
-// // }
+}
 
-// // function deleteReview() {
+function deleteReview() {
 
-// // }
+}

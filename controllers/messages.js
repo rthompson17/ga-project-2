@@ -1,21 +1,21 @@
-// const Message = require('../models/message');
-// const Match = require('../models/match');
-// const match = require('../models/match');
+const Message = require('../models/message');
+const Match = require('../models/match');
+const match = require('../models/match');
 
-// // module.exports = {
-// //     new: newMatch,
-// //     create,
-// //     sendMessage
-// // }
+module.exports = {
+    new: newMatch,
+    create,
+    sendMessage
+}
 
-// // function newMatch() {
+function newMatch() {
 
-// // }
+}
 
-// // function create() {
+function create() {
 
-// // }
+}
 
-// // function sendMessage() {
+function sendMessage() {
 
-// // }
+}

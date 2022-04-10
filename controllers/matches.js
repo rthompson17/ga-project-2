@@ -1,27 +1,27 @@
-// const Match = require("../models/match");
-// const Message = require('../models/message');
+const Match = require("../models/match");
+const Message = require('../models/message');
 
 
-// // module.exports = {
-// //     new: newMatch,
-// //     create,
-// //     index,
-// //     show
-// // }
-// // function show() {
+module.exports = {
+    new: newMatch,
+    create,
+    index,
+    show
+}
+function show() {
 
-// //     // Match.findById(req.params.id)
-// //     // .populate('')
-// // }
+    // Match.findById(req.params.id)
+    // .populate('')
+}
 
-// // function create() {
+function create() {
 
-// // }
+}
 
-// // function index() {
+function index(req, res) {
+    res.render("matches/index")
+}
 
-// // }
-
-// // function newMatch() {
+function newMatch() {
     
-// // }
+}
