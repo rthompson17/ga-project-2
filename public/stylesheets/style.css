@@ -1,24 +1,14 @@
-.brand-logo {
-  margin-left: 15px;
+.jumbotron{
+    background-color:#15b31d;
+    color:white;
 }
-
-.card .card-content .card-title {
-  margin-bottom: 10px;
+/* Adds borders for tabs */
+.tab-content {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
 }
-
-#search-row form {
-  padding-top: 20px;
-}
-
-.student-name {
-  position: relative;
-  top: -5px;
-}
-
-.collection-item form {
-  margin-top: -5px;
-}
-
-.header .login {
-  margin-top: -5px;
+.nav-tabs {
+    margin-bottom: 0;
 }

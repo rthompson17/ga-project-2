@@ -8,10 +8,10 @@ module.exports = {
     index,
     show
 }
-function show() {
-
-    // Match.findById(req.params.id)
-    // .populate('')
+function show(req, res) {
+//    Match.findById(req.params.id)
+//    .populate('')
+res.render("matches/show")
 }
 
 function create() {
