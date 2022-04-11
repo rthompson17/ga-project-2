@@ -16,14 +16,16 @@ const matchSchema = Schema({
         type: String,
         required: true
     },
-    matchedDate: {
+    matchDate: {
         type: Date
     },
-    currentlyMatched: { type: Boolean},
+    overallRating: String,
+    currentlyMatched: { type: Boolean, default: false},
     reviews: [reviewSchema],
-    reviewerMessage:[{type: Schema.Types.ObjectId, ref: 'Message'}]
 }, {
     timestamps: true
 });
 
 module.exports = mongoose.model('Match', matchSchema);
+
+

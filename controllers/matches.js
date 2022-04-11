@@ -34,13 +34,18 @@ function index(req, res) {
 
 
 function create(req, res) {
-    req.body.currentlyMatched = !!req.body.currentlyMatched;
+    console.log(req.body);
+    if (req.body.currentlyMatched === "on") {
+        req.body.currentlyMatched = true;
+    } else {
+        req.body.currentlyMatched = false;
+    }
     const match = new Match(req.body);
     match.save(function (err) {
         console.log(err, " this err");
         if (err) return res.redirect("/matches/new");
         console.log(match);
-        res.redirect(`/matches/${match._id}`);
+        res.redirect(`/matches`);
     });
 }
 

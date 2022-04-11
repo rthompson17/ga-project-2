@@ -10,6 +10,7 @@ function deleteReview() {
 }
 
 function create(req, res) {
+    console.log(req.body);
     Match.findById(req.params.id), function(err, matchFromTheDatabase) {
 
         req.body.user = req.user._id;
