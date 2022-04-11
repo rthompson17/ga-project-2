@@ -19,7 +19,7 @@ const matchSchema = Schema({
     matchedDate: {
         type: Date
     },
-    currentlyMatched: { type: Boolean, default: false },
+    currentlyMatched: { type: Boolean},
     reviews: [reviewSchema],
     reviewerMessage:[{type: Schema.Types.ObjectId, ref: 'Message'}]
 }, {

@@ -1,17 +1,18 @@
-<!-- this page is for a user creating ("searching for") a new match profile -->
 <%- include('../partials/header') %>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    
-</head>
-<body>
-    <h1>Hello World - Rate Your Date (NEW)</h1>
+<h5> this page is for a user creating ("searching for") a new match profile </h5>
+
+<form id="new-form" action="/matches" method="POST">
+    <label>Match's Name:</label>
+    <input type="text" name="matchName">
+    <label>Approximately when were you originally matched?</label>
+    <input type="date" name="matchedDate" checked>
+    <label>Write your review:</label>
+    <input type="text" name="reviewerMessage">
+<label>Currently Matched</label>
+<input type="checkbox" name="currentlyMatched" unchecked>
+<input type="submit" value="Search">
+</form>
 
 
 <%- include('../partials/footer') %>
