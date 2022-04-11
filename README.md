@@ -1,9 +1,8 @@
 # Project 2 Planning Items
 1. Trello: https://trello.com/b/H8FrYm53/project-2
 2. Paths: https://docs.google.com/spreadsheets/d/1V-3rQ8EK9T_naGxLEp6kMyjfYPMMk6HcLmbsCCMqprE/edit?usp=sharing
-3. ERD (will be edited): public/images/erd.png
-4. Wireframes: public/images/wireframes.png
-
+3. ERD (will be edited): https://drive.google.com/file/d/1de84KmmdeUC6TO3BODPzgyzoLATmDkaW/view?usp=sharing
+4. Wireframes: https://drive.google.com/file/d/1CMOXpXXpJHqpsTO2xHqcqyb7IRdWjCHY/view?usp=sharing
 
 # passport-boilerplate
 
