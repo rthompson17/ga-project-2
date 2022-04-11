@@ -1,5 +1,11 @@
-# passport-boilerplate
+# Project 2 Planning Items
+1. Trello: https://trello.com/b/H8FrYm53/project-2
+2. Paths: https://docs.google.com/spreadsheets/d/1V-3rQ8EK9T_naGxLEp6kMyjfYPMMk6HcLmbsCCMqprE/edit?usp=sharing
+3. ERD (will be edited): public/images/erd.png
+4. Wireframes: public/images/wireframes.png
 
+
+# passport-boilerplate
 
 This is your passport boilerplate.
 
@@ -33,3 +39,5 @@ This is your passport boilerplate.
 #### Make a commit 
 
 ```git commit -m "setup up oauth and User Model"```
+
+
