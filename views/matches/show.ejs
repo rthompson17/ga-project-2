@@ -19,8 +19,8 @@
 
 <div>Messages</div>
 <ul>
-  <% messages.forEach(m=> { %>
-  <li>Message: <%=m.reviewerMessage%></li>
+  <% match.reviewerMessage.forEach(m=> { %>
+  <li>Message <%=user.name%>: <%=m.reviewerMessage%></li>
   <% }) %>
 </ul>
 
@@ -68,17 +68,17 @@
   <tbody>
     <% let total=0 %> 
     <% match.reviews.forEach(function(r) { %>
-     <% total +=r.overallScore %>
+     <% total +=r.rating %>
     <tr>
       <td class="review-user"><img alt="avatar" src="<%= r.userAvatar %>"><%= r.userName %></td>
       <td>
           <%= r.createdAt.toLocaleDateString() %>
         </td>
       <td>
-          <%= r.content %>
+          <%= r.reviewText %>
         </td>
       <td>
-          <%= r.overallScore %>
+          <%= r.rating %>
         </td>
       <td>
         <% if (user && user._id.equals(r.user)) { %>

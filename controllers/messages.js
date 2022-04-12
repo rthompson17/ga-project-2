@@ -21,10 +21,11 @@ module.exports = {
 
 async function sendMessage(req, res) {
     const match = await Match.findById(req.params.id)
-    console.log(match);
     const message = await Message.create(req.body);
     console.log(message, '<-- this is a message');
+        req.body.userName = req.user.name;
         match.reviewerMessage.push(message);
+        console.log(match);
         //message.save();
         match.save();
          res.redirect('/matches/' + req.params.id);

@@ -6,18 +6,19 @@ function show(req, res) {
    Match.findById(req.params.id)
    .populate('reviewerMessage')
    .exec(function(err, match) {
-
-    Message.find(
-        {_id: {$nin: match.reviewerMessage}},
-        function(err, messages) {
-        console.log(messages);
+console.log(match);
+    // Message.find(
+    //     {_id: {$nin: match.reviewerMessage}},
+    //     function(err, messages) {
+        //console.log(messages);
          res.render('matches/show', {
-         matchName: 'Match Detail', match: match, messages: messages
+         matchName: 'Match Detail', match: match 
+         //messages: messages
         });
        }
    );
-});
-}
+};
+
 
 function newMatch(req, res) {
     res.render('matches/new', {matchName: "Add Match"});
