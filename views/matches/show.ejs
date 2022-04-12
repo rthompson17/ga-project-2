@@ -1,74 +1,105 @@
-    <%- include('../partials/header') %>
-    <h1>Hello World - Rate Your Date (SHOW)</h1>
-  <h5>this page shows the details of ONE of the user's matches 
-    and has a form where you can send a message to that match. <br> It should also only show the messages sent to that ONE MATCH.</h5> 
-    
-   <section id="show-page">
-       <div>Match: </div>
-       <div>
-           <%= match.matchName %> 
-       </div>
-       <div>Date: </div>
-       <div>
-           <%= match.matchDate %> 
-       </div>
-       <div>Overall Rating: </div>
-       <div>
-           <%= match.overallRating %> 
-       </div>
-   </section>
+<%- include('../partials/header') %>
+<h1>Hello World - Rate Your Date (SHOW VIEW)</h1>
+<h5>
+  this page shows the details of ONE of the user's matches and has a form where
+  you can send a message to that match. <br />
+  It should also only show the messages sent to that ONE MATCH.
+</h5>
 
-   <!-- add messages list -->
+<section id="show-page">
+  <div>Match:</div>
+  <div><%= match.matchName %></div>
+  <div>Date:</div>
+  <div><%= match.matchDate %></div>
+  <div>Overall Rating:</div>
+  <div><%= match.overallRating %></div>
+</section>
 
-   <div>Messages</div>
-   <ul>
-       <%- messages.map(m=>
-       `<li>${m.reviewerMessage}</li>`
-       )  %> 
-   </ul>
+<!-- add messages list -->
 
-   <!-- end messages list -->
+<div>Messages</div>
+<ul>
+  <% messages.forEach(m=> { %>
+  <li>Message: <%=m.reviewerMessage%></li>
+  <% }) %>
+</ul>
 
-   <!-- <%- messages.map(m=>
-   `<option value="${m._id}">${m.matchName}</option>`
-   ).join('') %> -->
+<!-- end messages list -->
 
-   <form id="send-message-to-match" action="/matches/<%= match._id %>/messages" method="POST">
-      
-    <textarea name="reviewerMessage" placeholder="Send a message..."></textarea>
-    <button type="submit">Send Message</button>
+<!-- <//%- //messages.map(m=>
+   //`<option value="${m._id}">${m.matchName}</option>`
+   //).join('') %> -->
+
+<form
+  id="send-message-to-match"
+  action="/matches/<%= match._id %>/messages"
+  method="POST"
+>
+  <textarea name="reviewerMessage" placeholder="Send a message..."></textarea>
+  <button type="submit">Send Message</button>
 </form>
 
-
-
-
-<br><br>  
+<br /><br />
 <h2>Reviews H2</h2>
 
-<% if (user) { %> 
+<% if (user) { %>
 
-    <form id="add-review-form" method="POST" action="/matches/<%= match._id %>/reviews">
-    <label>Here's a form!</label>
-    </form>
+<form
+  id="add-review-form"
+  method="POST"
+  action="/matches/<%= match._id %>/reviews"
+>
+  <label>Here's a form!</label>
+</form>
 
-<% } %>
-
+<% } %> 
 
 
 
 <% if (match.reviews.length) { %>
-    <table>
-        <thread>
-            <tr>
-                <th>Test</th>
-            </tr>
-        </thread>
-    </table>
+<table>
+  <thread>
+    <tr>
+      <th>Date Matched</th>
+      <th>Review</th>
+      <th>Overall Score</th>
+    </tr>
+  </thread>
+  <tbody>
+    <% let total=0 %> 
+    <% match.reviews.forEach(function(r) { %>
+     <% total +=r.overallScore %>
+    <tr>
+      <td class="review-user"><img alt="avatar" src="<%= r.userAvatar %>"><%= r.userName %></td>
+      <td>
+          <%= r.createdAt.toLocaleDateString() %>
+        </td>
+      <td>
+          <%= r.content %>
+        </td>
+      <td>
+          <%= r.overallScore %>
+        </td>
+      <td>
+        <% if (user && user._id.equals(r.user)) { %>
+        <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
+          <button type="submit">X</button>
+        </form>
+        <% } %>
+      </td>
+    </tr>
+    <% }); %>
+    <tr>
+      <td colspan="2"></td>
+      <td><strong> 
+          <%= (total / match.reviews.length).toFixed(1) %> 
+        </strong></td>
+    </tr>
+  </tbody>
+</table>
+<% } else { %>
+<h5>No Reviews</h5>
+<% } %> 
 
-<% } %>
 
-
-
-
-
-    <%- include('../partials/footer') %>
+<%- include('../partials/footer') %>

@@ -26,10 +26,12 @@
 <span class="text-warning">ex ea commodo</span>
 <span class="text-danger">consequat.</span> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
  
-    <a href="/matches/new">New Match</a>
-    <a href="/matches">All Matches</a>
-<div>Boostrap and JQuery stuff below here...</div>
+    <!-- <a href="/matches/new">New Match</a>
+    <a href="/matches">All Matches</a> -->
+<div>Log in to see all the stuff!</div>
     
+
+<% if (user) { %>
 <table id="list">
     <thread>
         <tr>
@@ -48,7 +50,7 @@
         <% }); %>
     </tbody>
 </table>
-    
+<% } %>
 
 
 

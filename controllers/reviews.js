@@ -5,8 +5,20 @@ module.exports = {
     delete: deleteReview
 }
 
-function deleteReview() {
+function deleteReview(req, res, next) {
+    Match.findMatch({'reviews._id': req.params.id}, function(err, matchDocument){
 
+        const review = matchDocument.reviews.id(req.params.id);
+
+        if(!review.user.equals(req.user._id)) return res.redirect(`/matches/${matchDocument._id}`);
+        review.remove()
+
+        matchDocument.save(function(err){
+            if(err) next(err);
+            res.redirect(`/matches/${matchDocument._id}`)
+        })
+
+    })
 }
 
 function create(req, res) {

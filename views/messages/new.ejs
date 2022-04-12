@@ -10,17 +10,18 @@
 <body>
     <p>This is the messages / new.ejs and should show the logged in user's SENT MESSAGES to ALL MATCHES</p>
 
+    <% if (user) { %>
     <form id="send-message" action="/messages" method="POST">
         <label>Message:</label>
         <input type="text" name="reviewerMessage"> 
         <input type="submit" value="Send Message">
     </form>
 
-    
+    <h1>SENT MESSAGES:</h1>
         <% messages.forEach(function(m) { %>
     <option><%= m.reviewerMessage %></option>
         <% }) %> 
-        
+        <% } %>    
 </body>
 </html>
 
