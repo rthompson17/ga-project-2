@@ -5,6 +5,7 @@ const Message = require('../models/message');
 function show(req, res) {
    Match.findById(req.params.id)
    .populate('reviewerMessage')
+   // also populate reviewSchema user
    .exec(function(err, match) {
 console.log(match);
     // Message.find(
@@ -41,7 +42,18 @@ function create(req, res) {
     } else {
         req.body.currentlyMatched = false;
     }
-    const match = new Match(req.body);
+    const matchObj = {
+        matchName: req.body.matchName,
+        matchedDate: req.body.matchDate,
+        currentlyMatched: req.body.currentlyMatched
+    }
+    const reviewObj = {
+        reviewText: req.body.reviews,
+        user: req.user._id,
+
+    }
+    const match = new Match(matchObj);
+    match.reviews.push(reviewObj);
     match.save(function (err) {
         console.log(err, " this err");
         if (err) return res.redirect("/matches/new");
