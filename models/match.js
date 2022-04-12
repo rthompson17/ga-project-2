@@ -17,11 +17,15 @@ const matchSchema = Schema({
         required: true
     },
     matchDate: {
-        type: Date
+        type: Date,
+        default: function () {
+        return new Date().setFullYear(new Date().getFullYear());
+    }
     },
     overallRating: String,
     currentlyMatched: { type: Boolean, default: false},
     reviews: [reviewSchema],
+    reviewerMessage: [{type: Schema.Types.ObjectId, ref: 'Message'}]
 }, {
     timestamps: true
 });

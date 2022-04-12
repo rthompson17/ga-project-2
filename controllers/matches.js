@@ -45,7 +45,7 @@ function create(req, res) {
         console.log(err, " this err");
         if (err) return res.redirect("/matches/new");
         console.log(match);
-        res.redirect(`/matches`);
+        res.redirect(`/matches/`);
     });
 }
 

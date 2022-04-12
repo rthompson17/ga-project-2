@@ -4,26 +4,40 @@ const match = require('../models/match');
 
 module.exports = {
     new: newMatch,
-    create,
+    // create,
     sendMessage
 }
 
 //// CLOSE EYE ON THIS ONE...
-function sendMessage() {
-    Match.findById(req.params.id, function(err, reviewerDocument){
-        reviewerDocument.reviewerMessage.push(req.body.messageId);
-        reviewerDocument.save(function(err){
-            res.redirect(`/matches/${reviewerDocument.__id}`)
-        })
-    })
-}
+// function sendMessage() {
+//     Match.findById(req.params.id, function(err, reviewerDocument){
+
+//         reviewerDocument.reviewerMessage.push(req.body.messageId);
+//         reviewerDocument.save(function(err){
+//             res.redirect(`/matches/${reviewerDocument._id}`);
+//         })
+//     })
+// }
+
+async function sendMessage(req, res) {
+    const match = await Match.findById(req.params.id)
+    console.log(match);
+    const message = await Message.create(req.body);
+    console.log(message, '<-- this is a message');
+        match.reviewerMessage.push(message);
+        //message.save();
+        match.save();
+         res.redirect('/matches/' + req.params.id);
+       }
 
 
-function create(req, res) {
-    Message.create(req.body, function (err, message) {
-        res.redirect('/messages/new');
-    });
-}
+// function create(req, res) {
+//     Message.create(req.body, function (err, message) {
+//         console.log(message);
+//         console.log(req.body);
+//         res.redirect('/messages/new');
+//     });
+// }
 
 function newMatch(req, res) {
     Message.find({}, function (err, messages) {

@@ -8,6 +8,20 @@
     <title>Document</title>
 </head>
 <body>
-    <p>This is the messages / new.ejs</p>
+    <p>This is the messages / new.ejs and should show the logged in user's SENT MESSAGES to ALL MATCHES</p>
+
+    <form id="send-message" action="/messages" method="POST">
+        <label>Message:</label>
+        <input type="text" name="reviewerMessage"> 
+        <input type="submit" value="Send Message">
+    </form>
+
+    
+        <% messages.forEach(function(m) { %>
+    <option><%= m.reviewerMessage %></option>
+        <% }) %> 
+        
 </body>
 </html>
+
+<%- include('../partials/footer') %>

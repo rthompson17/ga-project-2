@@ -1,7 +1,7 @@
     <%- include('../partials/header') %>
     <h1>Hello World - Rate Your Date (SHOW)</h1>
   <h5>this page shows the details of ONE of the user's matches 
-    and has a form where you can send a message to that match</h5> 
+    and has a form where you can send a message to that match. <br> It should also only show the messages sent to that ONE MATCH.</h5> 
     
    <section id="show-page">
        <div>Match: </div>
@@ -18,27 +18,54 @@
        </div>
    </section>
 
-   <form id="send-message-to-match" action="/matches/<%= match.__id %>/messages" method="POST">
-    <select name="messageId">
-        <%- messages.map(m=>
-        `<option value="${m._id}">${m.matchName}</option>`
-        ).join('') %>
-    </select>
+   <!-- add messages list -->
+
+   <div>Messages</div>
+   <ul>
+       <%- messages.map(m=>
+       `<li>${m.reviewerMessage}</li>`
+       )  %> 
+   </ul>
+
+   <!-- end messages list -->
+
+   <!-- <%- messages.map(m=>
+   `<option value="${m._id}">${m.matchName}</option>`
+   ).join('') %> -->
+
+   <form id="send-message-to-match" action="/matches/<%= match._id %>/messages" method="POST">
+      
+    <textarea name="reviewerMessage" placeholder="Send a message..."></textarea>
     <button type="submit">Send Message</button>
 </form>
 
+
+
+
 <br><br>  
-<h2>Reviews</h2>
+<h2>Reviews H2</h2>
 
 <% if (user) { %> 
 
     <form id="add-review-form" method="POST" action="/matches/<%= match._id %>/reviews">
-    
+    <label>Here's a form!</label>
     </form>
 
-}
+<% } %>
 
 
+
+
+<% if (match.reviews.length) { %>
+    <table>
+        <thread>
+            <tr>
+                <th>Test</th>
+            </tr>
+        </thread>
+    </table>
+
+<% } %>
 
 
 
