@@ -66,6 +66,7 @@
       <th class="text-center">Date Matched</th>
       <th class="text-center">Review</th>
       <th class="text-center">Overall Score</th>
+      <th class="text-center">Delete/Edit</th>
     </tr>
   </thread>
   <tbody>
@@ -85,9 +86,14 @@
         </td>
       <td>
         <% if (user && user._id.equals(r.user)) { %>
+        <!-- delete button -->
         <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
-          <button type="submit">X</button>
+          <button type="submit">Delete</button>
         </form>
+        <!-- edit button -->
+        <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
+            <button type="submit">Edit</button>
+          </form>
         <% } %>
       </td>
     </tr>

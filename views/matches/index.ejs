@@ -39,6 +39,7 @@
         <tr>
             <th class="text-center">Reviewed Match</th>
             <th class="text-center">Matched Date</th>
+            <th class="text-center">Review Details</th>
             <th class="text-center"></th>
         </tr>
     </thead>
@@ -47,7 +48,7 @@
             <tr>
                 <td><%= m.matchName %></td>
                 <td><%= m.matchDate %></td>
-                <td><a href="/matches/<%= m._id %>">Match Profile</a></td>
+                <td><a href="/matches/<%= m._id %>">Details</a></td>
             </tr>
         <% }); %>
     </tbody>

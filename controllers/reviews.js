@@ -6,7 +6,7 @@ module.exports = {
 }
 
 function deleteReview(req, res, next) {
-    Match.findMatch({'reviews._id': req.params.id}, function(err, matchDocument){
+    Match.findOne({'reviews._id': req.params.id}, function(err, matchDocument){
 
         const review = matchDocument.reviews.id(req.params.id);
 
