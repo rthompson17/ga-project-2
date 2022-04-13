@@ -9,7 +9,7 @@
 </head>
 <body>
     <!-- STRETCH GOAL PAGE FOR CHAT -->
-    
+
     <p>This is the messages / new.ejs and should show the logged in user's SENT MESSAGES to ALL MATCHES</p>
 
     <% if (user) { %>
@@ -21,10 +21,12 @@
 
     <h1>SENT MESSAGES:</h1>
         <% messages.forEach(function(m) { %>
-    <option>Message to (Match Name) :<%= m.reviewerMessage %></option>
+    <option>Message to <%= m.matchName %> :<%= m.reviewerMessage %></option>
         <% }) %> 
         <% } %>    
 </body>
 </html>
+
+
 
 <%- include('../partials/footer') %>

@@ -2,30 +2,28 @@
 
 
 <h1>Hello World - Rate Your Date (SHOW VIEW)</h1>
-<h5>
-  this page shows the details of ONE of the user's matches and has a form where
-  you can send a message to that match. <br />
-  It should also only show the messages sent to that ONE MATCH.
-</h5>
+<h5><%= match.matchName %> <br /></h5>
 <!-- User image -->
 <img src="https://images.squarespace-cdn.com/content/v1/5865abc3cd0f680962234f16/1571707388449-K6AJ87WDM1QKK2KKO8G1/rmi-john-flourescent-3-_color_0.jpg?format=1500w" id="john" class="img-responsive img-thumbnail pull-left" alt="Responsive image" style="width:350px;height:auto;">
 
 
+
+
 <section id="show-page">
-  <div>Match:</div>
-  <div><%= match.matchName %></div>
-  <div>Date:</div>
+  <!-- <div>Match: < %= match.matchName %></div> -->
+  <br>
+  <div>You matched with <%= match.matchName %> on:</div>
   <div><%= match.matchDate %></div>
+  <br>
   <div>Overall Rating:</div>
-  <div><%= match.overallRating %></div>
+  <div> TEST RATING <%= match.rating %></div>
 </section>
 
-<!-- add messages list -->
-
-<div>Messages</div>
+<br>
+<div>Messages:</div>
 <ul>
   <% match.reviewerMessage.forEach(m=> { %>
-  <li>Message <%=user.name%>: <%=m.reviewerMessage%></li>
+  <li>Message (user name): <%=m.reviewerMessage%></li>
   <% }) %>
 </ul>
 
@@ -35,26 +33,31 @@
    //`<option value="${m._id}">${m.matchName}</option>`
    //).join('') %> -->
 
+
 <form
   id="send-message-to-match"
   action="/matches/<%= match._id %>/messages"
   method="POST"
 >
-  <textarea name="reviewerMessage" placeholder="Send a message..."></textarea>
-  <button type="submit">Send Message</button>
+  <textarea name="reviewerMessage" placeholder="Send a direct message..." id="form12" class="form-control"></textarea>
+  <button type="submit">Send</button>
 </form>
-
-<br /><br />
-<h2>Reviews H2</h2>
+ 
 
 <% if (user) { %>
+
+    
+<br /><br />
+<h2>Your Review for <%= match.matchName %></h2>
+
+
 
 <form
   id="add-review-form"
   method="POST"
   action="/matches/<%= match._id %>/reviews"
 >
-  <label>Here's a form!</label>
+  <label>Your reviews are private until you and <%= match.matchName %> have checked in together for at least three dates. You may edit or delete your review.</label><br />
 </form>
 
 <% } %> 
@@ -62,6 +65,7 @@
 
 
 <% if (match.reviews.length) { %>
+    <br />
 <table class="table table-bordered table-striped table-hover">
   <thread>
     <tr>
@@ -94,10 +98,9 @@
           <button type="submit">Delete</button>
         </form>
         <!-- edit button -->
-        <a href="/reviews/<%= r._id %>/edit"><button type="submit">Edit</button></a>
-        
-        
-        
+        <form action="/reviews/<%= r._id %>?_method=PUT" method="POST">
+            <button type="submit">Edit</button>
+          </form>
         <% } %>
       </td>
     </tr>

@@ -4,10 +4,11 @@ const reviewsCtrl = require('../controllers/reviews');
 
 router.post('/matches/:id/reviews', reviewsCtrl.create);
 router.delete('/reviews/:id', reviewsCtrl.delete);
-router.get('/messages/:id/edit', reviewsCtrl.edit);
+//router.get('/messages/:id/edit', reviewsCtrl.edit);
 
 // to edit a review
-router.put('/reviews/:id', reviewsCtrl.update);
+router.put('/reviews/:id', reviewsCtrl.edit);
+//router.put('/reviews/:id', reviewsCtrl.update);
 
 
 module.exports = router;

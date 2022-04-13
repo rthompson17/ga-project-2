@@ -1,6 +1,7 @@
 const Message = require('../models/message');
 const Match = require('../models/match');
 const match = require('../models/match');
+//const matchName = require('../models/match')
 
 module.exports = {
     new: newMatch,
@@ -9,15 +10,15 @@ module.exports = {
 }
 
 //// CLOSE EYE ON THIS ONE...
-// function sendMessage() {
-//     Match.findById(req.params.id, function(err, reviewerDocument){
+function sendMessage() {
+    Match.findById(req.params.id, function(err, reviewerDocument){
 
-//         reviewerDocument.reviewerMessage.push(req.body.messageId);
-//         reviewerDocument.save(function(err){
-//             res.redirect(`/matches/${reviewerDocument._id}`);
-//         })
-//     })
-// }
+        reviewerDocument.reviewerMessage.push(req.body.messageId);
+        reviewerDocument.save(function(err){
+            res.redirect(`/matches/${reviewerDocument._id}`);
+        })
+    })
+}
 
 async function sendMessage(req, res) {
     const match = await Match.findById(req.params.id)
