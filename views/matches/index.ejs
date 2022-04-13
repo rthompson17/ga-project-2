@@ -29,23 +29,25 @@
     <!-- <a href="/matches/new">New Match</a>
     <a href="/matches">All Matches</a> -->
 <div>Log in to see all the stuff!</div>
-    
+
+
 
 <% if (user) { %>
-<table id="list">
-    <thread>
+<table id="list" class="table table-bordered table-striped table-hover">
+    <thead>
+        <td colspan="4">Your Reviews</td>
         <tr>
-            <th>Match Reviewed</th>
-            <th>Match Date</th>
-            <th></th>
+            <th class="text-center">Reviewed Match</th>
+            <th class="text-center">Matched Date</th>
+            <th class="text-center"></th>
         </tr>
-    </thread>
+    </thead>
     <tbody>
         <% matches.forEach(function(m) { %>
             <tr>
                 <td><%= m.matchName %></td>
                 <td><%= m.matchDate %></td>
-                <td><a href="/matches/<%= m._id %>">Reviews</a></td>
+                <td><a href="/matches/<%= m._id %>">Match Profile</a></td>
             </tr>
         <% }); %>
     </tbody>

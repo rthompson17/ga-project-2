@@ -8,16 +8,13 @@ function show(req, res) {
    // also populate reviewSchema user
    .exec(function(err, match) {
 console.log(match);
-    // Message.find(
-    //     {_id: {$nin: match.reviewerMessage}},
-    //     function(err, messages) {
-        //console.log(messages);
          res.render('matches/show', {
          matchName: 'Match Detail', match: match 
          //messages: messages
         });
        }
    );
+
 };
 
 

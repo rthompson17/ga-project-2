@@ -1,4 +1,6 @@
 <%- include('../partials/header') %>
+
+
 <h1>Hello World - Rate Your Date (SHOW VIEW)</h1>
 <h5>
   this page shows the details of ONE of the user's matches and has a form where
@@ -57,12 +59,13 @@
 
 
 <% if (match.reviews.length) { %>
-<table>
+<table class="table table-bordered table-striped table-hover">
   <thread>
     <tr>
-      <th>Date Matched</th>
-      <th>Review</th>
-      <th>Overall Score</th>
+      <th class="text-center">Reviewer</th>
+      <th class="text-center">Date Matched</th>
+      <th class="text-center">Review</th>
+      <th class="text-center">Overall Score</th>
     </tr>
   </thread>
   <tbody>
@@ -71,6 +74,9 @@
      <% total +=r.rating %>
     <tr>
       <td class="review-user"><img alt="avatar" src="<%= r.userAvatar %>"><%= r.userName %></td>
+      <td>
+        <%= user.name %>
+      </td>
       <td>
           <%= r.createdAt.toLocaleDateString() %>
         </td>
@@ -101,5 +107,7 @@
 <h5>No Reviews</h5>
 <% } %> 
 
+    
+ 
 
 <%- include('../partials/footer') %>
