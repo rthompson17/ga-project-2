@@ -94,9 +94,10 @@
           <button type="submit">Delete</button>
         </form>
         <!-- edit button -->
-        <form action="/reviews/<%= r._id %>?_method=PUT" method="POST">
-            <button type="submit">Edit</button>
-          </form>
+        <a href="/reviews/<%= r._id %>/edit"><button type="submit">Edit</button></a>
+        
+        
+        
         <% } %>
       </td>
     </tr>
