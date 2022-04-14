@@ -1,23 +1,27 @@
 <%- include('../partials/header') %>
 
-
 <h1>Hello World - Rate Your Date (SHOW VIEW)</h1>
 <h5><%= match.matchName %> <br /></h5>
 <!-- User image -->
-<img src="https://images.squarespace-cdn.com/content/v1/5865abc3cd0f680962234f16/1649887368229-0HOSLEL65QMGBX7O8F4T/match+avatar.png?format=500w" id="match-photo" class="img-responsive img-thumbnail pull-left" alt="Responsive image" style="width:350px;height:auto;">
-
+<img
+  src="https://images.squarespace-cdn.com/content/v1/5865abc3cd0f680962234f16/1649887368229-0HOSLEL65QMGBX7O8F4T/match+avatar.png?format=500w"
+  id="match-photo"
+  class="img-responsive img-thumbnail pull-left"
+  alt="Responsive image"
+  style="width: 350px; height: auto"
+/>
 
 <section id="show-page">
   <!-- <div>Match: < %= match.matchName %></div> -->
-  <br>
+  <br />
   <div>You reviewed with <%= match.matchName %> on:</div>
   <div><%= match.matchedDate %></div>
-  <br>
+  <br />
   <div>Overall Rating:</div>
-  <div> TEST RATING <%= match.rating %></div>
+  <div>TEST RATING <%= match.rating %></div>
 </section>
 
-<br>
+<br />
 <div>Messages:</div>
 <ul>
   <% match.reviewerMessage.forEach(m=> { %>
@@ -31,39 +35,39 @@
    //`<option value="${m._id}">${m.matchName}</option>`
    //).join('') %> -->
 
-
 <form
   id="send-message-to-match"
   action="/matches/<%= match._id %>/messages"
   method="POST"
 >
-  <textarea name="reviewerMessage" placeholder="Send a direct message..." id="form12" class="form-control"></textarea>
+  <textarea
+    name="reviewerMessage"
+    placeholder="Send a direct message..."
+    id="form12"
+    class="form-control"
+  ></textarea>
   <button type="submit">Send</button>
 </form>
- 
 
 <% if (user) { %>
 
-    
 <br /><br />
 <h2>Your Review for <%= match.matchName %></h2>
-
-
 
 <form
   id="add-review-form"
   method="POST"
   action="/matches/<%= match._id %>/reviews"
 >
-  <label>Your reviews are private until you and <%= match.matchName %> have checked in together for at least three dates. You may edit or delete your review.</label><br />
+  <label
+    >Your reviews are private until you and <%= match.matchName %> have checked
+    in together for at least three dates. You may edit or delete your
+    review.</label
+  ><br />
 </form>
 
-<% } %> 
-
-
-
-<% if (match.reviews.length) { %>
-    <br />
+<% } %> <% if (match.reviews.length) { %>
+<br />
 <table class="table table-bordered table-striped table-hover">
   <thread>
     <tr>
@@ -75,20 +79,15 @@
     </tr>
   </thread>
   <tbody>
-    <% let total=0 %> 
-    <% match.reviews.forEach(function(r) { %>
-     <% total +=r.rating %>
+    <% let total=0 %> <% match.reviews.forEach(function(r) { %> <% total
+    +=r.rating %>
     <tr>
-      <td class="review-user"><img alt="avatar" src="<%= r.userAvatar %>"><%= r.userName %></td>
-      <td>
-          <%= r.createdAt //toLocaleDateString() %>
-        </td>
-      <td>
-          <%= r.reviewText %>
-        </td>
-      <td>
-          <%= r.rating %>
-        </td>
+      <td class="review-user">
+        <img alt="avatar" src="<%= r.userAvatar %>" /><%= r.userName %>
+      </td>
+      <td><%= r.createdAt //toLocaleDateString() %></td>
+      <td><%= r.reviewText %></td>
+      <td><%= r.rating %></td>
       <td>
         <% if (user && user._id.equals(r.user)) { %>
         <!-- delete button -->
@@ -96,8 +95,9 @@
           <button type="submit">Delete</button>
         </form>
         <!-- edit button -->
-        <a href="/reviews/<%= r._id %>/edit"><button type="submit">Edit</button></a>
-
+        <a href="/reviews/<%= r._id %>/edit"
+          ><button type="submit">Edit</button></a
+        >
 
         <% } %>
       </td>
@@ -105,17 +105,12 @@
     <% }); %>
     <tr>
       <td colspan="2"></td>
-      <td><strong> 
-          <%= (total / match.reviews.length).toFixed(1) %> 
-        </strong></td>
+      <td>
+        <strong> <%= (total / match.reviews.length).toFixed(1) %> </strong>
+      </td>
     </tr>
   </tbody>
 </table>
 <% } else { %>
 <h5><%= match.matchName %> doesn't have any reviews.</h5>
-<% } %> 
-
-    
- 
-
-<%- include('../partials/footer') %>
+<% } %> <%- include('../partials/footer') %>

@@ -1,32 +1,32 @@
 <%- include('../partials/header') %>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <!-- STRETCH GOAL PAGE FOR CHAT -->
 
-    <p>This is the messages / new.ejs and should show the logged in user's SENT MESSAGES to ALL MATCHES</p>
+    <p>
+      This is the messages / new.ejs and should show the logged in user's SENT
+      MESSAGES to ALL MATCHES
+    </p>
 
     <% if (user) { %>
     <form id="send-message" action="/messages" method="POST">
-        <label>Message:</label>
-        <input type="text" name="reviewerMessage"> 
-        <input type="submit" value="Send Message">
+      <label>Message:</label>
+      <input type="text" name="reviewerMessage" />
+      <input type="submit" value="Send Message" />
     </form>
 
     <h1>SENT MESSAGES:</h1>
-        <% messages.forEach(function(m) { %>
+    <% messages.forEach(function(m) { %>
     <option>Message to <%= m.matchName %> :<%= m.reviewerMessage %></option>
-        <% }) %> 
-        <% } %>    
-</body>
+    <% }) %> <% } %>
+  </body>
 </html>
-
-
 
 <%- include('../partials/footer') %>

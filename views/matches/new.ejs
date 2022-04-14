@@ -1,23 +1,33 @@
 <%- include('../partials/header') %>
 
-<h5> this page is for a user creating ("searching for") a new match profile </h5>
+<h5>
+  Search for your match by name. If they have an active account and you have
+  previously checked in on three or more dates with them, you will be eligible
+  to leave them a review.
+</h5>
 
-<form id="new-form" action="/matches" method="POST">
 
-    <label>Match's Name:</label>
-    <input type="text" name="matchName" id="form12" class="form-control">
-    <br />
-    <label>Approximately how long were you matched?</label>
-    <input type="date" name="matchedDate" id="form12" class="form-control">
-    <br />
-    <label>Write your review:</label>
-    <input type="text" name="reviews" id="form12" class="form-control">
-    <br />
-    <label>Currently Matched</label>
-    <input type="checkbox" name="currentlyMatched" checked>
-
-<input type="submit" value="Search" id="form12" class="form-control" style="width:200px;height:auto;background-color:rosybrown" >
+<form id="new-form" style="max-width: 400px" ; action="/matches" method="POST">
+  <label>Match's Name:</label>
+  <input type="text" name="matchName" id="form12" class="form-control" />
+  <br />
+  <label>Approximately how long were you matched?</label>
+  <input type="text" name="matchedDate" id="form12" class="form-control" />
+  <br />
+  <label>Write your review:</label>
+  <input type="text" name="reviews" id="form12" class="form-control" />
+  <br />
+  <label>Currently Matched</label>
+  <input type="checkbox" name="currentlyMatched" checked />
+  <br />
+  <br />
+  <input
+    type="submit"
+    value="Find Match"
+    id="form12"
+    class="form-control"
+    style="width: 200px; height: auto; background-color: rosybrown"
+  />
 </form>
-
 
 <%- include('../partials/footer') %>

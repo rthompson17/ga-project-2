@@ -43,13 +43,11 @@
       <div class="collapse navbar-collapse" style="color:aquamarine; background-color:#5BB381" id="navbarSupportedContent">
         <!-- Navbar brand -->
         <a class="navbar-brand mt-2 mt-lg-0" style="background-color:  #4A154B" href="/matches">
-          <img
-            src="https://images.squarespace-cdn.com/content/v1/5865abc3cd0f680962234f16/1649861824693-N7GT39AQEQ0LEKNG974I/image-asset.png?format=2500w"
-            style="background-color: aquamarine;"
+            <a class="nav-link" href="/matches"><img
+            src="https://images.squarespace-cdn.com/content/v1/5865abc3cd0f680962234f16/1649861824693-N7GT39AQEQ0LEKNG974I/image-asset.png?format=2500w" 
             height="80px"
             alt="RYD Logo"
-            
-          />
+          /></a>
         </a>
         <!-- Left links -->
         <% if (user) { %>
@@ -78,20 +76,20 @@
                 aria-expanded="false"
               >
                 <i class="fas fa-bell"></i>
-                <span class="badge rounded-pill badge-notification bg-danger">1</span>
-              </a>
+                <span class="badge rounded-pill badge-notification bg-danger">647 LIKES</span>
+            </a>
               <ul
                 class="dropdown-menu dropdown-menu-end"
                 aria-labelledby="navbarDropdownMenuLink"
               >
                 <li>
-                  <a class="dropdown-item" href="#">Some news</a>
+                  <a class="dropdown-item" href="#">Browse Humans</a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#">Another news</a>
+                  <a class="dropdown-item" href="#">Received Reviews</a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#">Something else here</a>
+                  <a class="dropdown-item" href="#">Try Something New?e</a>
                 </li>
               </ul>
             </div>
@@ -116,27 +114,29 @@
       <!-- Collapsible wrapper -->
   
       <!-- Right elements -->
-      <div class="d-flex align-items-center">
+      <div class="d-flex align-items-center" >
         <!-- Icon -->
         <a class="text-reset me-3" href="#">
           <i class="fas fa-shopping-cart"></i>
         </a>
   
         <!-- Avatar -->
-        <div class="dropdown">
+        <div class="dropdown" style="background-color: #64C3EB;">
           <a
             class="dropdown-toggle d-flex align-items-center hidden-arrow"
             href="#"
             id="navbarDropdownMenuAvatar"
             role="button"
+            
             data-mdb-toggle="dropdown"
             aria-expanded="false"
           >
-            <img
+          <a class="nav-link" href="/matches"><img
               src="https://images.squarespace-cdn.com/content/v1/5865abc3cd0f680962234f16/1571707376142-NLK49TP3EL90Y9CWKT1P/rmi-gloria-floor-2-sharp0.jpg?format=1000w"
               class="rounded-circle"
               height="55"
               alt="Gloria"
+              style="color: #E3B34C;"
               loading="lazy"
             />
           </a>Gloria
