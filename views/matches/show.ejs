@@ -10,8 +10,8 @@
 <section id="show-page">
   <!-- <div>Match: < %= match.matchName %></div> -->
   <br>
-  <div>You matched with <%= match.matchName %> on:</div>
-  <div><%= match.matchDate %></div>
+  <div>You reviewed with <%= match.matchName %> on:</div>
+  <div><%= match.matchedDate %></div>
   <br>
   <div>Overall Rating:</div>
   <div> TEST RATING <%= match.rating %></div>
@@ -68,7 +68,7 @@
   <thread>
     <tr>
       <th class="text-center">Reviewer</th>
-      <th class="text-center">Date Matched</th>
+      <th class="text-center">Date Reviewed</th>
       <th class="text-center">Review</th>
       <th class="text-center">Overall Score</th>
       <th class="text-center">Delete/Edit</th>
@@ -81,7 +81,7 @@
     <tr>
       <td class="review-user"><img alt="avatar" src="<%= r.userAvatar %>"><%= r.userName %></td>
       <td>
-          <%= r.createdAt.toLocaleDateString() %>
+          <%= r.createdAt //toLocaleDateString() %>
         </td>
       <td>
           <%= r.reviewText %>
@@ -112,7 +112,7 @@
   </tbody>
 </table>
 <% } else { %>
-<h5>No Reviews</h5>
+<h5><%= match.matchName %> doesn't have any reviews.</h5>
 <% } %> 
 
     
