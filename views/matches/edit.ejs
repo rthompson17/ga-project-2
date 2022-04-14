@@ -1,4 +1,6 @@
-<form action="/reviews/<%= r._id %>?_method=PUT" method="POST">
-    <textarea name="reviewText" value="<%= review.reviewText%>">
+
+
+<form action="/reviews/<%= review._id %>?_method=PUT" method="POST">
+    <textarea name="reviewText"><%= review.reviewText%></textarea>
     <button type="submit">Edit</button>
   </form>

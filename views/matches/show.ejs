@@ -4,9 +4,7 @@
 <h1>Hello World - Rate Your Date (SHOW VIEW)</h1>
 <h5><%= match.matchName %> <br /></h5>
 <!-- User image -->
-<img src="https://images.squarespace-cdn.com/content/v1/5865abc3cd0f680962234f16/1571707388449-K6AJ87WDM1QKK2KKO8G1/rmi-john-flourescent-3-_color_0.jpg?format=1500w" id="john" class="img-responsive img-thumbnail pull-left" alt="Responsive image" style="width:350px;height:auto;">
-
-
+<img src="https://images.squarespace-cdn.com/content/v1/5865abc3cd0f680962234f16/1649887368229-0HOSLEL65QMGBX7O8F4T/match+avatar.png?format=500w" id="match-photo" class="img-responsive img-thumbnail pull-left" alt="Responsive image" style="width:350px;height:auto;">
 
 
 <section id="show-page">
@@ -98,9 +96,9 @@
           <button type="submit">Delete</button>
         </form>
         <!-- edit button -->
-        <form action="/reviews/<%= r._id %>?_method=PUT" method="POST">
-            <button type="submit">Edit</button>
-          </form>
+        <a href="/reviews/<%= r._id %>/edit"><button type="submit">Edit</button></a>
+
+
         <% } %>
       </td>
     </tr>
