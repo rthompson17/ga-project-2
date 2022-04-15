@@ -36,18 +36,16 @@ Once the logged in user leaves or edits a review, the upated versions displays o
 
 ![RYD_matchProfileEdited](https://images.squarespace-cdn.com/content/v1/5865abc3cd0f680962234f16/1650033639385-ZCDY8QHUS0L4KJN3OIWX/Screen+Shot+2022-04-15+at+10.40.31+AM.png?format=2500w)
 
+
+This is my Trello board from planning: https://trello.com/b/H8FrYm53/project-2
+
+Visit the site here: https://rate-your-date.herokuapp.com/matches
+
+
 ## Technologies Used
 The Rate Your Date website was built using Node.js, Express, Mongoose, MongoDB, Bootstrap, JavaScript, HTML and CSS.
 
 Schemas were build to enable functionality between the database and client display, allowing users to create match profiles and edit reviews associated with each match. The form to leave a review is embedded withim the match schema.
-
-
-
-
-
-
-Visit here: https://rate-your-date.herokuapp.com/matches
-
 
 ## Next Steps
 - Better styling on all pages
