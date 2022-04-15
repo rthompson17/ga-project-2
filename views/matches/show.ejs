@@ -89,7 +89,7 @@ src="https://images.squarespace-cdn.com/content/v1/5865abc3cd0f680962234f16/1650
 <table class="table table-bordered table-striped table-hover">
   <thread>
     <tr>
-     
+      <th class="text-center">Reviewer</th>
       <th class="text-center">Date Reviewed</th>
       <th class="text-center">Review</th>
       <!-- <th class="text-center">Overall Score</th> -->
@@ -100,7 +100,9 @@ src="https://images.squarespace-cdn.com/content/v1/5865abc3cd0f680962234f16/1650
     <% let total=0 %> <% match.reviews.forEach(function(r) { %> 
     <% total +=r.rating %>
     <tr>
-      
+      <td class="review-user">
+        <img alt="avatar" src="<%= r.userAvatar %>" /><%= r.userName %>
+      </td>
       <td><%= r.createdAt //toLocaleDateString() %></td>
       <td><%= r.reviewText %></td>
       <!-- <td>< %= r.rating %></td> -->
