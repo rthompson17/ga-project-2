@@ -18,7 +18,6 @@ Schemas were build to enable functionality between the database and client displ
 ![RYD_editForm](https://images.squarespace-cdn.com/content/v1/5865abc3cd0f680962234f16/1650030422323-4IJDF8JXJ4M6UTJL4ZGD/RYD+Edit+a+review.png?format=2500w)
 
 # Project 2 Planning Items
-![RYD_paths](https://docs.google.com/spreadsheets/d/1V-3rQ8EK9T_naGxLEp6kMyjfYPMMk6HcLmbsCCMqprE/edit?usp=sharing)
 ![RYD_ERD](https://images.squarespace-cdn.com/content/v1/5865abc3cd0f680962234f16/1650029395535-7M4OOUTHS78GZ579M8EY/Rate+Your+Date+ERD.png?format=2500w)
 
 ## Next Steps
