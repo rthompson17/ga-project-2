@@ -53,6 +53,7 @@ Schemas were build to enable functionality between the database and client displ
 ## Next Steps
 - Better styling on all pages
 - Improved functionality for edit and review forms
+- Enhance features for displaying an average review score with color coding
 - Use of an AI chat bot to simulate direct message chatting
 - Use an array of random images to populate when creating fake "match" accounts and profiles
 
