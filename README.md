@@ -45,7 +45,10 @@ The Rate Your Date website was built using Node.js, Express, Mongoose, MongoDB, 
 
 Schemas were build to enable functionality between the database and client display, allowing users to create match profiles and edit reviews associated with each match. The form to leave a review is embedded withim the match schema.
 
+## Initial Planning and Wireframes
 ![RYD_ERD](https://images.squarespace-cdn.com/content/v1/5865abc3cd0f680962234f16/1650029395535-7M4OOUTHS78GZ579M8EY/Rate+Your+Date+ERD.png?format=2500w)
+
+![RYD_wireframes](https://images.squarespace-cdn.com/content/v1/5865abc3cd0f680962234f16/1650039701045-01TY7RW16DGJ5LR23M0K/wireframes.png?format=1000w)
 
 ## Next Steps
 - Better styling on all pages
