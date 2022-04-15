@@ -1,4 +1,4 @@
-![RYD_title](https://www.rymarieimages.com/hidden-gallery/o3v2fe8c75uf2j9jroga90i9smupe7)
+![RYD_title](https://images.squarespace-cdn.com/content/v1/5865abc3cd0f680962234f16/1650036172891-ZIWJ8CEDI7FE6OLLA2S3/RYD+logo.png?format=2500w)
 
 Rate Your Date is a full stack MongoDB, Express.js, and Node.js mockup of a dating website. It displays a theoretical feature that allows users to write a review about their experience after a date with a match. 
 
