@@ -20,9 +20,13 @@ If they have already left reviews for a user, they can click on "details" to see
 
 Once on a user's profile page, they can make edits to their review. (Theoretically for the concept, they would have to do this within 72 hours of leaving the review, but this is mentioned for mockup purposes only.) They may also choose to delete their review.
 
+![RYD_matchProfile](https://images.squarespace-cdn.com/content/v1/5865abc3cd0f680962234f16/1650030381818-C4NSSWYN9HULU7EH73R0/RYD+edit+or+delete+a+review+.png?format=2500w)
+
 ![RYD_editForm](https://images.squarespace-cdn.com/content/v1/5865abc3cd0f680962234f16/1650030422323-4IJDF8JXJ4M6UTJL4ZGD/RYD+Edit+a+review.png?format=2500w)
 
+Once they leave or edit a review, the upated versions displays on the user's profile.
 
+![RYD_matchProfileEdited](https://images.squarespace-cdn.com/content/v1/5865abc3cd0f680962234f16/1650030381818-C4NSSWYN9HULU7EH73R0/RYD+edit+or+delete+a+review+.png?format=2500w)
 
 ## Technologies Used
 The Rate Your Date website was built using Node.js, Express, Mongoose, MongoDB, Bootstrap, JavaScript, HTML and CSS.
