@@ -1,11 +1,9 @@
 <%- include('../partials/header') %>
 
 
-
-
 <h1>Edit Your Review</h1>
 <h5>Update your review for </h5>
-<form action="/reviews/<%= review._id %>?_method=PUT" method="POST">
+<form style="max-width: 400px; content: justify-content-center" action="/reviews/<%= review._id %>?_method=PUT" method="POST">
     <textarea name="reviewText"><%= review.reviewText%></textarea>
     <button type="submit">Edit</button>
   </form>
