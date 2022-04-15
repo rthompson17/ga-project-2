@@ -2,8 +2,6 @@
 
 Rate Your Date is a full stack MongoDB, Express.js, and Node.js mockup of a dating website. It displays a theoretical feature that allows users to write a review about their experience after a date with a match. 
 
-![RYD_ERD](https://images.squarespace-cdn.com/content/v1/5865abc3cd0f680962234f16/1650029395535-7M4OOUTHS78GZ579M8EY/Rate+Your+Date+ERD.png?format=2500w)
-
 
 ## Getting Started
 The concept of this theoretical app revolves around a mission to enable people to rate their experiences with current or former matches, without the focus becomming strictly negative. Ensuring this would require that reviews be left throughout the duration of the connection, starting from the beginning, in order to provide a more accurate account of the overall dating experience with each person, encouraging mutual accountability and consideration.
@@ -46,6 +44,8 @@ Visit the site here: https://rate-your-date.herokuapp.com/matches
 The Rate Your Date website was built using Node.js, Express, Mongoose, MongoDB, Bootstrap, JavaScript, HTML and CSS.
 
 Schemas were build to enable functionality between the database and client display, allowing users to create match profiles and edit reviews associated with each match. The form to leave a review is embedded withim the match schema.
+
+![RYD_ERD](https://images.squarespace-cdn.com/content/v1/5865abc3cd0f680962234f16/1650029395535-7M4OOUTHS78GZ579M8EY/Rate+Your+Date+ERD.png?format=2500w)
 
 ## Next Steps
 - Better styling on all pages
