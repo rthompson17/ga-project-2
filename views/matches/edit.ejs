@@ -1,11 +1,25 @@
 <%- include('../partials/header') %>
 
+<br><br>
+<body>
+    <div class="d-flex justify-content-center">
 
-<h1>Edit Your Review</h1>
-<h5>Update your review for </h5>
+<h1>Edit Your Review</h1><br>
+</div>
+<div class="d-flex justify-content-center">
+
+<p>Update your review</p>
+</div>
+<div class="d-flex justify-content-center">
+
 <form style="max-width: 400px; content: justify-content-center" action="/reviews/<%= review._id %>?_method=PUT" method="POST">
-    <textarea name="reviewText"><%= review.reviewText%></textarea>
-    <button type="submit">Edit</button>
+    <textarea name="reviewText" id="form12" class="form-control"><%= review.reviewText%></textarea>
+    <br>
+    <button type="submit" id="form12"class="form-control"
+    style="width: 200px; height: auto; background-color: rosybrown">Edit</button>
   </form>
+</div>
+</body>
+<br><br>
 
   <%- include('../partials/footer') %>
