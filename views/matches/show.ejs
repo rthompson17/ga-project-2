@@ -1,7 +1,11 @@
 <%- include('../partials/header') %>
 
-<h1>Hello World - Rate Your Date (SHOW VIEW)</h1>
-<h5><%= match.matchName %> <br /></h5>
+<h1>Your review of <%= match.matchName %> </h1>
+
+
+<% if (user) { %>
+
+
 <!-- User image -->
 <img
   src="https://images.squarespace-cdn.com/content/v1/5865abc3cd0f680962234f16/1649887368229-0HOSLEL65QMGBX7O8F4T/match+avatar.png?format=500w"
@@ -10,16 +14,16 @@
   alt="Responsive image"
   style="width: 350px; height: auto"
 />
-
-<section id="show-page">
+<section id="show-page" class="d-flex justify-content-left">
   <!-- <div>Match: < %= match.matchName %></div> -->
   <br />
-  <div>You reviewed with <%= match.matchName %> on:</div>
+  <div>You reviewed <%= match.matchName %> on:</div>
   <div><%= match.matchedDate %></div>
   <br />
   <div>Overall Rating:</div>
   <div>TEST RATING <%= match.rating %></div>
 </section>
+
 
 <br />
 <div>Messages:</div>
@@ -35,7 +39,7 @@
    //`<option value="${m._id}">${m.matchName}</option>`
    //).join('') %> -->
 
-<form
+<form 
   id="send-message-to-match"
   action="/matches/<%= match._id %>/messages"
   method="POST"
@@ -49,11 +53,12 @@
   <button type="submit">Send</button>
 </form>
 
-<% if (user) { %>
+
 
 <br /><br />
 <h2>Your Review for <%= match.matchName %></h2>
 
+<div class="d-flex justify-content-center">
 <form
   id="add-review-form"
   method="POST"
@@ -65,8 +70,12 @@
     review.</label
   ><br />
 </form>
+</div>
 
-<% } %> <% if (match.reviews.length) { %>
+
+<% } %> 
+
+<% if (match.reviews.length) { %>
 <br />
 <table class="table table-bordered table-striped table-hover">
   <thread>
@@ -112,5 +121,7 @@
   </tbody>
 </table>
 <% } else { %>
-<h5><%= match.matchName %> doesn't have any reviews.</h5>
+<h5><%= match.matchName %> Log in to see reviews.</h5>
+
+
 <% } %> <%- include('../partials/footer') %>

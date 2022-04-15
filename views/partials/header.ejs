@@ -39,14 +39,7 @@
                 <li class="nav-item active">
                   <a class="nav-link" aria-current="page" href="/matches/new">REVIEW A MATCH</a>
                 </li>
-                <!-- <li class="nav-item active">
-                    <a class="nav-link" aria-current="page" href="#">EXPLORE</a>
-                  </li> -->
-                <!-- <li class="nav-item">
-                  <a class="nav-link" href="/messages/new" rel="nofollow"
-                    target="_blank">MESSAGES</a> -->
-                    
-                </li>
+               
                 <li class="nav-item">
                   <a class="nav-link" href="#" target="_blank"> NEW REVIEWS
                     <span class="badge rounded-pill badge-notification bg-danger">47</span></a>
@@ -68,9 +61,9 @@
             </div>
              
               <% } else { %>
-                <a href="/auth/google" class="login ml-auto">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png" style="width:20px;height:auto;"></a>    
             <% } %>
         </nav>
+
      
         <% if (user) { %>
 
@@ -85,7 +78,7 @@
           <div class="d-flex justify-content-center align-items-center h-100">
             <div class="text-white text-center">
                 <br><br>
-              <h1 class="mb-3">You're logged in!</h1>
+              <h1 class="mb-3">Hello, Gloria</h1>
               <h5 class="mb-4">rate your dates and find great matches</h5>
              
             </div>
@@ -98,12 +91,12 @@
 
 
 
-  <% } else { %>
 
+  <% } else { %>
 <header>
-  
+   
     <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block" style="z-index: 2000;">
-        <div class="container-fluid">
+        <div class="container-fluid"> 
           <!-- Navbar brand -->
           <a class="navbar-brand nav-link" target="_blank" href="/matches">
             <strong>RATE YOUR DATE</strong>
@@ -130,16 +123,18 @@
                   <h5 class="mb-4">rate your dates and find great matches</h5>
                   <a href="/auth/google" class="login ml-auto">Log in with Google&nbsp;<img src="https://i.imgur.com/FHjYyi0.png" style="width:20px;height:auto;"></a>    
 
-                 
+                
                 </div>
               </div>
-            <!-- </div> -->
+            <!-- </div> -->  
           </div>
+        
         </div>
+       
       </div>
 
-
       <% } %>
+      
 </header>
 
 
