@@ -1,9 +1,4 @@
-<!-- this page shows an overview of a user's matches they've left reviews for, and is the user's main profile page -->
 <%- include('../partials/header') %>
-
-
-<!-- ////////////// -->
-
 
 <% if (user) { %>
 
@@ -15,7 +10,6 @@
 <img src="https://images.squarespace-cdn.com/content/v1/5865abc3cd0f680962234f16/1571707376984-SZGJZYLSYYPNNH2FCWK8/rmi-gloria-window-down-small.jpg?format=1000w" id="gloria" class="img-responsive img-thumbnail pull-left" alt="Responsive image" style="width:auto;height:300px;">
 
 </div>
-
 <table id="list" class="table table-bordered table-striped table-hover">
     <thead>
         <td colspan="4" style="color:antiquewhite; background-color: #4A154B; text-align: center; font-size: x-large;"><strong>Reviews You've Written</strong></td>
@@ -39,22 +33,12 @@
 
 
 
-
-
 <% } else { %>
-
-      <!--Main Navigation-->
-
-      <!--Main layout-->
       <main class="mt-5">
         <div class="container">
             <div>
-
-          <!--Section: Content-->
           <section class="d-flex justify-content-center">
-            
-  
-<br />
+            <br />
               <div class="col-md-9 gx-5 mb-4">
                 <h4><strong>Is this one of those 'trash your ex' sites?'</strong></h4>
                 <p>
@@ -69,14 +53,10 @@
                     </ol>
                 </p>
               </div>
-            
           </div>
             </div>
         </section>
             </main>
-        
-
-
         <% } %>    
 
 <%- include('../partials/footer') %>

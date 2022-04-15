@@ -1,60 +1,58 @@
-.jumbotron{
-    background-color:#15b31d;
-    color:white;
+.jumbotron {
+  background-color: #15b31d;
+  color: white;
 }
 /* Adds borders for tabs */
 .tab-content {
-    border-left: 1px solid #ddd;
-    border-right: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
-    padding: 10px;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
 }
 .nav-tabs {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
-        /* Carousel styling */
-          #introCarousel,
-          .carousel-inner,
-          .carousel-item,
-          .carousel-item.active {
-            height: 100vh;
-          }
-  
-          .carousel-item:nth-child(1) {
-            background-image: url('https://images.squarespace-cdn.com/content/v1/5865abc3cd0f680962234f16/1649987015772-QU8HBQSGHGF3NM7JFH6B/clem-onojeghuo-DH6rWTYYQ_8-unsplash+copy.jpg?format=2500w');
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center center;
-          }
-          .carousel-item:nth-child(2) {
-            background-image: url('https://images.squarespace-cdn.com/content/v1/5865abc3cd0f680962234f16/1571707383812-Z4HE3FRO5I9MBDVJKMW4/rmi-BlackmagicProductionCamera4K_1_2023-02-08_0122_C0001.mov.01_23_14_18.Still011-edit-small.jpg?format=1500w');
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center center;
-          }
-          .carousel-item:nth-child(3) {
-            background-image: url('https://mdbootstrap.com/img/Photos/Others/images/78.jpg');
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center center;
-          }
-  
-          /* Height for devices larger than 576px */
-          @media (min-width: 992px) {
-            #introCarousel {
-              margin-top: -58.59px;
-            }
-            #introCarousel,
-            .carousel-inner,
-            .carousel-item,
-            .carousel-item.active {
-              height: 50vh;
-            }
-          }
-  
-          .navbar .nav-link {
-            color: #fff !important;
-          }
-        
-  
+/* Carousel styling */
+#introCarousel,
+.carousel-inner,
+.carousel-item,
+.carousel-item.active {
+  height: 100vh;
+}
+
+.carousel-item:nth-child(1) {
+  background-image: url("https://images.squarespace-cdn.com/content/v1/5865abc3cd0f680962234f16/1649987015772-QU8HBQSGHGF3NM7JFH6B/clem-onojeghuo-DH6rWTYYQ_8-unsplash+copy.jpg?format=2500w");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+.carousel-item:nth-child(2) {
+  background-image: url("https://images.squarespace-cdn.com/content/v1/5865abc3cd0f680962234f16/1571707383812-Z4HE3FRO5I9MBDVJKMW4/rmi-BlackmagicProductionCamera4K_1_2023-02-08_0122_C0001.mov.01_23_14_18.Still011-edit-small.jpg?format=1500w");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+.carousel-item:nth-child(3) {
+  background-image: url("https://mdbootstrap.com/img/Photos/Others/images/78.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+/* Height for devices larger than 576px */
+@media (min-width: 992px) {
+  #introCarousel {
+    margin-top: -58.59px;
+  }
+  #introCarousel,
+  .carousel-inner,
+  .carousel-item,
+  .carousel-item.active {
+    height: 50vh;
+  }
+}
+
+.navbar .nav-link {
+  color: #fff !important;
+}
