@@ -56,7 +56,7 @@ Visit here: https://rate-your-date.herokuapp.com/matches
 - Use an array of random images to populate when creating fake "match" accounts and profiles
 
 ### Attribution:
-- Gloria photos by Ry Marie Images (www.rymarieimages.com) 
+- Photos of Gloria taken by me at Ry Marie Images (www.rymarieimages.com) 
 - Header image by Clem Onojeghuo on Unsplash
 - Match profile images by henri meilhac on Unsplash
 
