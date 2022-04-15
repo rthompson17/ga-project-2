@@ -1,35 +1,47 @@
 <%- include('../partials/header') %>
 
-<h1>Your review of <%= match.matchName %> </h1>
-
 
 <% if (user) { %>
 
-
+<br>
+<section class="d-flex justify-content-center">
+<h1>Your review of <%= match.matchName %> </h1>
+</section>
+<br>
 <!-- User image -->
 <img
-  src="https://images.squarespace-cdn.com/content/v1/5865abc3cd0f680962234f16/1649887368229-0HOSLEL65QMGBX7O8F4T/match+avatar.png?format=500w"
+  src="https://images.squarespace-cdn.com/content/v1/5865abc3cd0f680962234f16/1650024270645-LZLTG1WIQLDHZZQWMJGN/henri-meilhac-YjuycLB1pR8-unsplash.jpg?format=2500w"
   id="match-photo"
   class="img-responsive img-thumbnail pull-left"
   alt="Responsive image"
   style="width: 350px; height: auto"
 />
+<img
+src="https://images.squarespace-cdn.com/content/v1/5865abc3cd0f680962234f16/1650024270145-J8ITLC4SB9MLUS82KN7T/henri-meilhac-h2_ZzPCyPL4-unsplash.jpg?format=2500w"
+  id="match-photo"
+  class="img-responsive img-thumbnail pull-left"
+  alt="Responsive image"
+  style="width: 350px; height: auto"
+/>
+
+
+
 <section id="show-page" class="d-flex justify-content-left">
   <!-- <div>Match: < %= match.matchName %></div> -->
   <br />
-  <div>You reviewed <%= match.matchName %> on:</div>
-  <div><%= match.matchedDate %></div>
+  <div>You reviewed <%= match.matchName %> on.. </div>
+  <div><%= match.matchDate %></div>
   <br />
-  <div>Overall Rating:</div>
-  <div>TEST RATING <%= match.rating %></div>
+  <!-- <div>Overall Rating:</div>
+  <div>TEST RATING < %= match.reviews.rating %></div> -->
 </section>
 
 
 <br />
-<div>Messages:</div>
+<div><strong>Direct Messages:</strong></div>
 <ul>
   <% match.reviewerMessage.forEach(m=> { %>
-  <li>Message (user name): <%=m.reviewerMessage%></li>
+  <li>You: <%=m.reviewerMessage%></li>
   <% }) %>
 </ul>
 
@@ -41,6 +53,7 @@
 
 <form 
   id="send-message-to-match"
+  style="max-width: 400px; content: justify-content-center"
   action="/matches/<%= match._id %>/messages"
   method="POST"
 >
@@ -52,22 +65,18 @@
   ></textarea>
   <button type="submit">Send</button>
 </form>
-
-
-
 <br /><br />
-<h2>Your Review for <%= match.matchName %></h2>
 
 <div class="d-flex justify-content-center">
-<form
+<form 
   id="add-review-form"
   method="POST"
   action="/matches/<%= match._id %>/reviews"
 >
   <label
-    >Your reviews are private until you and <%= match.matchName %> have checked
-    in together for at least three dates. You may edit or delete your
-    review.</label
+    ><p>Your reviews are private until you and <%= match.matchName %> have checked
+    in together for at least three dates. You have 72 hours to edit or delete your
+    review.</p></label
   ><br />
 </form>
 </div>
@@ -83,20 +92,20 @@
       <th class="text-center">Reviewer</th>
       <th class="text-center">Date Reviewed</th>
       <th class="text-center">Review</th>
-      <th class="text-center">Overall Score</th>
+      <!-- <th class="text-center">Overall Score</th> -->
       <th class="text-center">Delete/Edit</th>
     </tr>
   </thread>
   <tbody>
-    <% let total=0 %> <% match.reviews.forEach(function(r) { %> <% total
-    +=r.rating %>
+    <% let total=0 %> <% match.reviews.forEach(function(r) { %> 
+    <% total +=r.rating %>
     <tr>
       <td class="review-user">
         <img alt="avatar" src="<%= r.userAvatar %>" /><%= r.userName %>
       </td>
       <td><%= r.createdAt //toLocaleDateString() %></td>
       <td><%= r.reviewText %></td>
-      <td><%= r.rating %></td>
+      <!-- <td>< %= r.rating %></td> -->
       <td>
         <% if (user && user._id.equals(r.user)) { %>
         <!-- delete button -->
@@ -112,12 +121,12 @@
       </td>
     </tr>
     <% }); %>
-    <tr>
+    <!-- <tr>
       <td colspan="2"></td>
       <td>
-        <strong> <%= (total / match.reviews.length).toFixed(1) %> </strong>
+        <strong> < %= (total / match.reviews.length).toFixed(1) %> </strong>
       </td>
-    </tr>
+    </tr> -->
   </tbody>
 </table>
 <% } else { %>
